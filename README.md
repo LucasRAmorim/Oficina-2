@@ -1,64 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Oficina 2.0
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+Projeto criado afim de participar do processo seletivo da empresa Codificar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O projeto visa facilitar o acompanhamento dos pedidos de orçamento da oficina.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Neste projeto você conseguirá: cadastrar um novo orçamento, informando os campos id, 
+nome cliente, data e hora do orçamento, nome do vendedor, descrição do orçamento e o
+valor orçado.
+Conseguirá também: Editar um orçamento ja criado, deletar um orçamento e fazer uma busca
+pelo nome do cliente, nome do vendedor ou um intervalo de datas.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalação
 
-## Learning Laravel
+Projeto feito utilizando Docker com o utiliátio Laradock.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Para fazer a instalação do projeto, siga as instruições abaixo em ordem:
+Faça o donwload da aplicação do laragon:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1#-faça o download do Laragon:
+https://laragon.org/download/
 
-## Laravel Sponsors
+2#-realize o Download do Docker Desktop: 
+https://www.docker.com/products/docker-desktop/-
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3#-Acesse o diretório 'www' do laragon em seu terminal(geralmente localizado no diretório
+C:\laragon\www\)
 
-### Premium Partners
+4#-Fazendo a instalação do utilitário laradock, siga os seguintes passos:
+https://laradock.io/
+lembrando que o Laradock deve estar dentro do diretório (.../laragon/www)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#EXECUTE OS CONTEINERS NO TERMINAL:#
+docker-compose up -d nginx mysql phpmyadmin
 
-## Contributing
+#EXECUTE O WORKSPACE EM BASH:#
+docker exec -it laradock-workspace-1 bash
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Dentro do workspace, clone o projeto:
+https://github.com/LucasRAmorim/Oficina-2.git
+cd oficina-2\ 
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Configurações adicionais:
+Os detalhes do banco no arquivo .env devem estar com as seguintes Configurações:
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=oficina
+DB_USERNAME=root
+DB_PASSWORD=root
 
-## Security Vulnerabilities
+Um banco de dados com o seguinte nome deve ser criado:
+"oficina"
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Após a execução dessas configurações, basta executar no terminal o comando
+php artisan migrate;
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+E testar o projeto.
