@@ -1,4 +1,3 @@
-
 <h1>Editar Orçamento <strong> {{ $budget->id }} </strong></h1>
 
 @if ($errors->any())

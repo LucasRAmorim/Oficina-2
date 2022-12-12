@@ -2,7 +2,7 @@
 
 
 <ul>
-    
+
     <li> <strong>ID do orçamento: </strong>{{ $budget->id }} </li>
     <li> <strong>Nome do cliente: </strong>{{ $budget->client_name }} </li>
     <li> <strong>Nome do vendedor: </strong>{{ $budget->seller_name }} </li>

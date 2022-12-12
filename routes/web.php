@@ -26,7 +26,7 @@ Route::post('/budgets', [BudgetController::class, 'store'])->name('budgets.store
 Route::get('/budgets', [BudgetController::class, 'index'])->name('budgets.index');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 

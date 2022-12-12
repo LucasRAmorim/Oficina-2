@@ -21,9 +21,10 @@
 @foreach ($budgets as $budget)
     <p>
         {{ $budget->id }}
+        {{ $budget->id }}
         [
         <a href="{{ route('budgets.show', $budget->id) }} ">Ver Orçamento</a> |
-        <a href="{{ route('budgets.edit', $budget->id) }}">Editar Orçamento</a>
+        <a href="{{ route('budgets.edit', $budget->id) }} ">Editar Orçamento</a>
         ]
 
     </p>
