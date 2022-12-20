@@ -100,7 +100,8 @@ class BudgetController extends Controller
 
     public function update(StoreUpdateBudget $request, $id)
     {
-        if (!$budget = Budget::find($id)) {
+        $budget = Budget::find($id);
+        if (!$budget) {
             return redirect()->back();
         }
 

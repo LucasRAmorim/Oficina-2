@@ -20,8 +20,10 @@
 
 @foreach ($budgets as $budget)
     <p>
-        {{ $budget->id }}
-        {{ $budget->id }}
+        {{ $budget->id }} |
+        {{ $budget->client_name }} |
+        {{ $budget->seller_name }} |
+        {{ $budget->created_at }}
         [
         <a href="{{ route('budgets.show', $budget->id) }} ">Ver Orçamento</a> |
         <a href="{{ route('budgets.edit', $budget->id) }} ">Editar Orçamento</a>
