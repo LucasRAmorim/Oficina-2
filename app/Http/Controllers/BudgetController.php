@@ -41,7 +41,9 @@ class BudgetController extends Controller
     {
         $budget = Budget::create($request->all());
 
-        return redirect()->route('budgets.index');
+        return redirect()
+                ->route('budgets.index')
+                ->with('message', 'Orçamento criado com sucesso.');
     }
 
     /**
